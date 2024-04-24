@@ -32,7 +32,16 @@ In short, I first had to install some required packages, such as the __ultralyti
 Results:\
 ![colab_results_50e](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/6258d4fb-8fa5-4c5e-8590-62294716805f)
 
+The training lasted a little less than an hour.
+
 ## Testing
+The testing of the model is done using the following command:\
+`!yolo detect predict model=/path/to/model.pt source='/path/to/image'`
+specifically in my case:\
+`!yolo detect predict model=/content/drive/MyDrive/best_colab_50e.pt source='/content/owl-sheep-1/test/images/2bc6fded1a1ff77f_jpg.rf.d895bdb06e28cdc155bb22daac1b635f.jpg'`
+The model was tested on several images, here are a couple of examples:\
+![colab_predict_50e](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/6a065659-2331-4ff4-97f7-d4c3352f5790)
+![colab_predict_50e_2](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/e16409b0-bc99-442d-979e-9c06ec507689)
 
 # Approach 2.
 This approach is largely the same, the only difference is that the dataset prepared on Roboflow was downloaded locally as a `.zip` file.\
@@ -44,11 +53,17 @@ After unzipping the files, I downloaded the pre-trained __yolov8n-oiv7.pt__ mode
 
 ![local_command_10e](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/c986996b-f7fe-4016-b491-807c307e0f5b)
 
-I trained it only on 10 epochs as the training was too strenuous on my GPU.\
+I trained it only for 10 epochs as the training was too strenuous on my GPU.\
 Results:\
 ![local_results_10e](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/9fdce00c-a390-4293-90b1-f052ed9eebd9)
 
+The training lasted about two hours.
+
 ## Testing
+Testing the local model was done using the same command, but with adjusted paths.\
+Here are a couple of results:\
+![1a75900918483d0d_jpg rf 7a631a7ec17a68c5b9dd67f1c9fe5cd1](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/6a6d439f-4d0f-4c07-9c2b-f8aeb7880342)
+![4b628115bbe657a0_jpg rf 3bf4963d20bb8727a3d735f935769377](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/11250018-d6eb-46f6-a214-10a631d4ee7a)
 
 # Approach 3.
 ## Dataset download
@@ -66,4 +81,13 @@ This model was also only trained on 10 epochs because it was done locally.\
 Results:\
 ![local_rucni_results_10e](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/7107d3ca-aa15-48b9-bef8-7c2adda024d5)
 
+The training lasted about 1:45 hours.
+
 ## Testing
+Again, the testing is the same. Here are a couple of examples:\
+![2faec3ce69fc47bc](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/bf8bf6ad-1e2a-4209-91f2-48ce6be23262)
+![03eb981d8556f73e](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/d2eef7be-8e9d-477d-8241-61445ed008f1)
+
+# Conclusion
+Overall, the best results came from the model trained on Google Colab for 50 epochs, which should come to no surprise as it was trained 5 times as long as the local models. Additionaly, it took much shorter to train the model on Google Colab.\
+However, it should be noted that although worse, the results of the local models were not bad. They were not perfect, but they yielded acceptable results for only 10 epochs.
