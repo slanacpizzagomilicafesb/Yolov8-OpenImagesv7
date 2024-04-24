@@ -3,11 +3,11 @@ This is a project I made to detect owls and sheep using Yolov8 and OpenImages v7
 
 # Approach 1.
 ## Dataset download
-I dowloaded the dataset using OIDv4 ToolKit, which dowloads the latest OpenImages dataset. To do so, first I had to clone the OIDv$ ToolKit github repository using the following command:\
-`git clone https://github.com/EscVM/OIDv4_ToolKit.git`\
+I dowloaded the dataset using OIDv4 ToolKit, which dowloads the latest OpenImages dataset. To do so, first I had to clone the OIDv4 ToolKit github repository using the following command:\
+`git clone https://github.com/EscVM/OIDv4_ToolKit.git`
 
 After that, I downloaded all the requirements using the following command:\
-`pip install -r requirements.txt`\
+`pip install -r requirements.txt`
 
 Finally for the dataset download, I downloaded it using the following commands:\
 `python main.py downloader --classes Owl --type_csv All`
@@ -19,10 +19,10 @@ Finally for the dataset download, I downloaded it using the following commands:\
 
 
 ![OIDv4 ToolKit sheep](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/5b35c51c-95f2-46e3-8a99-2d5992806a2b)
-Each command downloaded one class. `--type_csv All` argument ensures that we download train, validation and test splits.\
+Each command downloaded one class. `--type_csv All` argument ensures that we download train, validation and test splits.
 
 ## Converting to Yolov8 format
-Next, I uploaded the downloaded images and the accompanying .txt files to Roboflow to convert the downloaded .txt files to Yolov8 format.\
+Next, I uploaded the downloaded images and the accompanying .txt files to Roboflow to convert the downloaded `.txt` files to Yolov8 format.\
 After the annotations were converted to Yolov8 format, I exported the dataset using Roboflow's download link:\
 ![roboflow_dataset_download_colab](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/0ea855fc-c5f9-4c5a-8966-0282f677d3aa)
 
@@ -35,13 +35,15 @@ Results:\
 ## Testing
 
 # Approach 2.
-This approach is largely the same, the only difference is that the dataset prepared on Roboflow was downloaded locally as a .zip file.\
+This approach is largely the same, the only difference is that the dataset prepared on Roboflow was downloaded locally as a `.zip` file.\
 ![roboflow_dataset_download_local](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/c3c9097f-6091-477c-b747-0ba2afc5067b)
+
 After unzipping the files, I downloaded the pre-trained __yolov8n-oiv7.pt__ model, however, I trained the model via the command line using the following command:\
 `yolo detect train data=data.yaml model=yolov8-oiv7.pt epochs=10 imgsz=640`
 
 
 ![local_command_10e](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/c986996b-f7fe-4016-b491-807c307e0f5b)
+
 I trained it only on 10 epochs as the training was too strenuous on my GPU.\
 Results:\
 ![local_results_10e](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/9fdce00c-a390-4293-90b1-f052ed9eebd9)
@@ -50,7 +52,7 @@ Results:\
 
 # Approach 3.
 ## Dataset download
-In this approach I downloaded the dataset using the [dataset_download.py](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/blob/main/local_scripts/dataset_download.py) script and I downloaded only Owl and Sheep classes. Along with the images came the detections.csv file which contained relevant information about detections in the images, however, it was not in the Yolov8 format. I also had to download the __fiftyone__ package to execute this script.\
+In this approach I downloaded the dataset using the [dataset_download.py](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/blob/main/local_scripts/dataset_download.py) script and I downloaded only Owl and Sheep classes. Along with the images came the `detections.csv` file which contained relevant information about detections in the images, however, it was not in the Yolov8 format. I also had to download the __fiftyone__ package to execute this script.\
 ![download_script](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/0a28301a-0d16-43eb-98a9-41866a0c5b9a)
 
 ## Converting to Yolov8 format
