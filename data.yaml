@@ -1,0 +1,8 @@
+path: ./open-images-v7  # dataset root dir
+train: ./train/images  # train images (relative to 'path')
+val: ./validation/images  # val images (relative to 'path')
+test: ./test/images # test images (optional)
+
+names:
+  0: Owl
+  1: Sheep
