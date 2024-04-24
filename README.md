@@ -11,9 +11,11 @@ After that, I downloaded all the requirements using the following command:\
 
 Finally for the dataset download, I downloaded it using the following commands:\
 `python main.py downloader --classes Owl --type_csv All`\
+
 ![OIDv4 ToolKit owl](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/41d19509-0b97-4a38-9798-0a324bf700a7)
 
 `python main.py downloader --classes Sheep --type_csv All`\
+
 ![OIDv4 ToolKit sheep](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/5b35c51c-95f2-46e3-8a99-2d5992806a2b)
 Each command downloaded one class. `--type_csv All` argument ensures that we download train, validation and test splits.\
 
@@ -35,6 +37,7 @@ This approach is largely the same, the only difference is that the dataset prepa
 ![roboflow_dataset_download_local](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/c3c9097f-6091-477c-b747-0ba2afc5067b)
 After unzipping the files, I downloaded the pre-trained __yolov8n-oiv7.pt__ model, however, I trained the model via the command line using the following command:\
 `yolo detect train data=data.yaml model=yolov8-oiv7.pt epochs=10 imgsz=640`\
+
 ![local_command_10e](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/c986996b-f7fe-4016-b491-807c307e0f5b)
 I trained it only on 10 epochs as the training was too strenuous on my GPU.\
 Results:\
@@ -56,6 +59,6 @@ Next, I used the [csv_to_txt.py](https://github.com/slanacpizzagomilicafesb/Yolo
 After converting the given files into the Yolov8 format, I was ready to begin training. The script used can be found in the [yolov8_train.ipynb](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/blob/main/yolov8_train.ipynb) file. But in essence, the training process was the same as it was in __Approach 1.__\
 This model was also only trained on 10 epochs because it was done locally.\
 Results:\
-![local_rucni_results_10e](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/7107d3ca-aa15-48b9-bef8-7c2adda024d5)\
+![local_rucni_results_10e](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/7107d3ca-aa15-48b9-bef8-7c2adda024d5)
 
 ## Testing
