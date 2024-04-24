@@ -28,7 +28,7 @@ After the annotations were converted to Yolov8 format, I exported the dataset us
 
 ## Training
 For training, I used [Google Colab](https://colab.google/) because it offers free GPUs to use and they are better than the one I have locally. The code used can be found in the [yolov8_oiv7.ipynb](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/blob/main/yolov8_oiv7.ipynb) file.\
-In short, I first had to install some required packages, such as the __ultralytics__ and __roboflow__ packages. Then I had to load the dataset prepared on Roboflow using the block of code seen above. After that, I had to edit the data.yaml file so that the paths leading to the data were correct. Next, I downloaded the pre-trained `yolov8n-oiv7.pt` model. Finally, I trained the model using the downloaded model and dataset.\
+In short, I first had to install some required packages, such as the __ultralytics__ and __roboflow__ packages. Then I had to load the dataset prepared on Roboflow using the block of code seen above. After that, I had to edit the [data.yaml](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/blob/main/data.yaml) file so that the paths leading to the data were correct. Next, I downloaded the pre-trained `yolov8n-oiv7.pt` model. Finally, I trained the model using the downloaded model and dataset.\
 Results:\
 ![colab_results_50e](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/6258d4fb-8fa5-4c5e-8590-62294716805f)
 
