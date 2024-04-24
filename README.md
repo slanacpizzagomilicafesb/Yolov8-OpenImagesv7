@@ -2,8 +2,8 @@
 This is my project for the application for the position of AI engineer for Codeasy.
 
 # Approach 1.
-I dowloaded the dataset using OIDv4 ToolKit, which dowloads the latest OpenImages dataset.
-To do so, first I had to clone the OIDv$ ToolKit github repository using the following command:
+I dowloaded the dataset using OIDv4 ToolKit, which dowloads the latest OpenImages dataset.\
+To do so, first I had to clone the OIDv$ ToolKit github repository using the following command:\
 `git clone https://github.com/EscVM/OIDv4_ToolKit.git`
 
 After that, I downloaded all the requirements using the following command:
