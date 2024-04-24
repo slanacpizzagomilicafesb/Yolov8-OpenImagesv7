@@ -10,12 +10,10 @@ After that, I downloaded all the requirements using the following command:\
 `pip install -r requirements.txt`\
 
 Finally for the dataset download, I downloaded it using the following commands:\
-`python main.py downloader --classes Owl --type_csv All`\
-
+`python main.py downloader --classes Owl --type_csv All`\ \
 ![OIDv4 ToolKit owl](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/41d19509-0b97-4a38-9798-0a324bf700a7)
 
-`python main.py downloader --classes Sheep --type_csv All`\
-
+`python main.py downloader --classes Sheep --type_csv All`\ \
 ![OIDv4 ToolKit sheep](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/5b35c51c-95f2-46e3-8a99-2d5992806a2b)
 Each command downloaded one class. `--type_csv All` argument ensures that we download train, validation and test splits.\
 
@@ -36,8 +34,7 @@ Results:\
 This approach is largely the same, the only difference is that the dataset prepared on Roboflow was downloaded locally as a .zip file.\
 ![roboflow_dataset_download_local](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/c3c9097f-6091-477c-b747-0ba2afc5067b)
 After unzipping the files, I downloaded the pre-trained __yolov8n-oiv7.pt__ model, however, I trained the model via the command line using the following command:\
-`yolo detect train data=data.yaml model=yolov8-oiv7.pt epochs=10 imgsz=640`\
-
+`yolo detect train data=data.yaml model=yolov8-oiv7.pt epochs=10 imgsz=640`\ \
 ![local_command_10e](https://github.com/slanacpizzagomilicafesb/Yolov8-OpenImagesv7/assets/56551410/c986996b-f7fe-4016-b491-807c307e0f5b)
 I trained it only on 10 epochs as the training was too strenuous on my GPU.\
 Results:\
